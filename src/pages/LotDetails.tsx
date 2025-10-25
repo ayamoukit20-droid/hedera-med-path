@@ -7,32 +7,32 @@ import { useNavigate, useParams } from "react-router-dom";
 
 const traceabilityPath = [
   {
-    stage: "Manufacturing",
-    location: "Factory C - Mumbai, India",
-    timestamp: "2024-01-10 08:30:00",
+    stage: "Fabrication",
+    location: "Usine C - Mumbai, Inde",
+    timestamp: "10/01/2024 08:30:00",
     hash: "0x1a2b3c4d...",
     icon: Factory,
     completed: true,
   },
   {
     stage: "Distribution",
-    location: "Distribution Center A - Delhi, India",
-    timestamp: "2024-01-12 14:15:00",
+    location: "Centre de distribution A - Delhi, Inde",
+    timestamp: "12/01/2024 14:15:00",
     hash: "0x5e6f7g8h...",
     icon: Truck,
     completed: true,
   },
   {
-    stage: "Pharmacy",
-    location: "Pharmacy B - Bangalore, India",
-    timestamp: "2024-01-14 10:00:00",
+    stage: "Pharmacie",
+    location: "Pharmacie B - Bangalore, Inde",
+    timestamp: "14/01/2024 10:00:00",
     hash: "0x9i0j1k2l...",
     icon: Building2,
     completed: true,
   },
   {
-    stage: "Patient Delivery",
-    location: "Pending",
+    stage: "Livraison au patient",
+    location: "En attente",
     timestamp: "-",
     hash: "-",
     icon: CheckCircle,
@@ -48,35 +48,35 @@ export default function LotDetails() {
     <div className="flex h-screen bg-background">
       <Sidebar />
       <div className="flex flex-1 flex-col overflow-hidden">
-        <TopBar userRole="Manufacturer" onLogout={() => navigate("/")} />
+        <TopBar userRole="Fabricant" onLogout={() => navigate("/")} />
         
         <main className="flex-1 overflow-y-auto p-6">
           <div className="mb-6">
-            <h1 className="text-3xl font-bold text-foreground">Lot Details: {lotId}</h1>
-            <p className="text-muted-foreground">Complete traceability path on the blockchain</p>
+            <h1 className="text-3xl font-bold text-foreground">Détails du lot : {lotId}</h1>
+            <p className="text-muted-foreground">Parcours de traçabilité complet sur la blockchain</p>
           </div>
 
           <Card className="mb-6">
             <CardHeader>
-              <CardTitle>Product Information</CardTitle>
+              <CardTitle>Informations sur le produit</CardTitle>
             </CardHeader>
             <CardContent>
               <div className="grid gap-4 md:grid-cols-2">
                 <div>
-                  <p className="text-sm text-muted-foreground">Product Name</p>
-                  <p className="text-lg font-medium">Aspirin 500mg</p>
+                  <p className="text-sm text-muted-foreground">Nom du produit</p>
+                  <p className="text-lg font-medium">Aspirine 500mg</p>
                 </div>
                 <div>
-                  <p className="text-sm text-muted-foreground">Current Status</p>
-                  <Badge className="mt-1">In Transit</Badge>
+                  <p className="text-sm text-muted-foreground">Statut actuel</p>
+                  <Badge className="mt-1">En transit</Badge>
                 </div>
                 <div>
-                  <p className="text-sm text-muted-foreground">Batch Number</p>
+                  <p className="text-sm text-muted-foreground">Numéro de lot</p>
                   <p className="text-lg font-medium">BATCH-2024-A123</p>
                 </div>
                 <div>
-                  <p className="text-sm text-muted-foreground">Expiry Date</p>
-                  <p className="text-lg font-medium">2026-01-15</p>
+                  <p className="text-sm text-muted-foreground">Date d'expiration</p>
+                  <p className="text-lg font-medium">15/01/2026</p>
                 </div>
               </div>
             </CardContent>
@@ -84,8 +84,8 @@ export default function LotDetails() {
 
           <Card>
             <CardHeader>
-              <CardTitle>Traceability Path</CardTitle>
-              <CardDescription>Blockchain-verified journey from factory to patient</CardDescription>
+              <CardTitle>Parcours de traçabilité</CardTitle>
+              <CardDescription>Parcours vérifié par blockchain de l'usine au patient</CardDescription>
             </CardHeader>
             <CardContent>
               <div className="relative space-y-6">

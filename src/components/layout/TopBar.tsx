@@ -20,7 +20,7 @@ export function TopBar({ userRole = "Manufacturer", onLogout }: TopBarProps) {
   return (
     <div className="flex h-16 items-center justify-between border-b border-border bg-card px-6">
       <div className="flex items-center gap-4">
-        <h2 className="text-lg font-semibold text-foreground">Supply Chain Dashboard</h2>
+        <h2 className="text-lg font-semibold text-foreground">Tableau de bord de la chaîne d'approvisionnement</h2>
       </div>
 
       <div className="flex items-center gap-4">
@@ -44,22 +44,22 @@ export function TopBar({ userRole = "Manufacturer", onLogout }: TopBarProps) {
               <div className="flex flex-col items-start">
                 <span className="text-sm font-medium">{userRole}</span>
                 <Badge variant="secondary" className="text-xs">
-                  Active
+                  Actif
                 </Badge>
               </div>
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end" className="w-56">
-            <DropdownMenuLabel>My Account</DropdownMenuLabel>
+            <DropdownMenuLabel>Mon compte</DropdownMenuLabel>
             <DropdownMenuSeparator />
             <DropdownMenuItem>
               <User className="mr-2 h-4 w-4" />
-              Profile
+              Profil
             </DropdownMenuItem>
             <DropdownMenuSeparator />
             <DropdownMenuItem onClick={onLogout}>
               <LogOut className="mr-2 h-4 w-4" />
-              Logout
+              Déconnexion
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>

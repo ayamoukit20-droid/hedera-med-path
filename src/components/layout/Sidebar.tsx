@@ -3,10 +3,10 @@ import { LayoutDashboard, Package, AlertTriangle, MapPin, Factory } from "lucide
 import { cn } from "@/lib/utils";
 
 const navigation = [
-  { name: "Dashboard", href: "/dashboard", icon: LayoutDashboard },
-  { name: "Lots Tracking", href: "/lots", icon: Package },
-  { name: "AI Alerts", href: "/alerts", icon: AlertTriangle },
-  { name: "Map View", href: "/map", icon: MapPin },
+  { name: "Tableau de bord", href: "/dashboard", icon: LayoutDashboard },
+  { name: "Suivi des lots", href: "/lots", icon: Package },
+  { name: "Alertes IA", href: "/alerts", icon: AlertTriangle },
+  { name: "Vue carte", href: "/map", icon: MapPin },
 ];
 
 export function Sidebar() {

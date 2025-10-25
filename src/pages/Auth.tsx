@@ -9,10 +9,10 @@ import { Factory, Truck, Building2, Shield } from "lucide-react";
 import { toast } from "sonner";
 
 const roles = [
-  { value: "manufacturer", label: "Manufacturer", icon: Factory },
-  { value: "distributor", label: "Distributor", icon: Truck },
-  { value: "pharmacy", label: "Pharmacy", icon: Building2 },
-  { value: "authority", label: "Authority", icon: Shield },
+  { value: "manufacturer", label: "Fabricant", icon: Factory },
+  { value: "distributor", label: "Distributeur", icon: Truck },
+  { value: "pharmacy", label: "Pharmacie", icon: Building2 },
+  { value: "authority", label: "Autorité", icon: Shield },
 ];
 
 export default function Auth() {
@@ -26,12 +26,12 @@ export default function Auth() {
     e.preventDefault();
     
     if (!email || !password) {
-      toast.error("Please fill in all fields");
+      toast.error("Veuillez remplir tous les champs");
       return;
     }
 
     // Mock authentication
-    toast.success(isLogin ? "Logged in successfully!" : "Account created successfully!");
+    toast.success(isLogin ? "Connexion réussie !" : "Compte créé avec succès !");
     navigate("/dashboard");
   };
 
@@ -45,21 +45,21 @@ export default function Auth() {
             </div>
           </div>
           <h1 className="text-3xl font-bold text-card">MedSupply Chain</h1>
-          <p className="text-sm text-card/80">Secure Medicine Tracking System</p>
+          <p className="text-sm text-card/80">Système de Traçabilité Sécurisé des Médicaments</p>
         </div>
 
         <Card className="shadow-[var(--shadow-medium)]">
           <CardHeader>
-            <CardTitle>{isLogin ? "Sign In" : "Create Account"}</CardTitle>
+            <CardTitle>{isLogin ? "Connexion" : "Créer un compte"}</CardTitle>
             <CardDescription>
-              {isLogin ? "Enter your credentials to access the dashboard" : "Register a new account"}
+              {isLogin ? "Entrez vos identifiants pour accéder au tableau de bord" : "Inscrivez-vous pour un nouveau compte"}
             </CardDescription>
           </CardHeader>
           <CardContent>
             <form onSubmit={handleSubmit} className="space-y-4">
               {!isLogin && (
                 <div className="space-y-3">
-                  <Label>Select Your Role</Label>
+                  <Label>Sélectionnez votre rôle</Label>
                   <RadioGroup value={selectedRole} onValueChange={setSelectedRole}>
                     <div className="grid grid-cols-2 gap-3">
                       {roles.map((role) => (
@@ -107,18 +107,18 @@ export default function Auth() {
               </div>
 
               <Button type="submit" className="w-full">
-                {isLogin ? "Sign In" : "Create Account"}
+                {isLogin ? "Se connecter" : "Créer un compte"}
               </Button>
             </form>
 
             <div className="mt-4 text-center text-sm">
-              {isLogin ? "Don't have an account? " : "Already have an account? "}
+              {isLogin ? "Pas encore de compte ? " : "Vous avez déjà un compte ? "}
               <button
                 type="button"
                 onClick={() => setIsLogin(!isLogin)}
                 className="font-medium text-primary hover:underline"
               >
-                {isLogin ? "Sign up" : "Sign in"}
+                {isLogin ? "S'inscrire" : "Se connecter"}
               </button>
             </div>
           </CardContent>

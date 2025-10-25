@@ -6,9 +6,9 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { useNavigate } from "react-router-dom";
 
 const recentActivity = [
-  { id: 1, lot: "LOT-2024-001", status: "In Transit", location: "Distribution Center A", time: "2 hours ago" },
-  { id: 2, lot: "LOT-2024-002", status: "Delivered", location: "Pharmacy B", time: "5 hours ago" },
-  { id: 3, lot: "LOT-2024-003", status: "Manufacturing", location: "Factory C", time: "1 day ago" },
+  { id: 1, lot: "LOT-2024-001", status: "En transit", location: "Centre de distribution A", time: "il y a 2 heures" },
+  { id: 2, lot: "LOT-2024-002", status: "Livré", location: "Pharmacie B", time: "il y a 5 heures" },
+  { id: 3, lot: "LOT-2024-003", status: "Fabrication", location: "Usine C", time: "il y a 1 jour" },
 ];
 
 export default function Dashboard() {
@@ -18,42 +18,42 @@ export default function Dashboard() {
     <div className="flex h-screen bg-background">
       <Sidebar />
       <div className="flex flex-1 flex-col overflow-hidden">
-        <TopBar userRole="Manufacturer" onLogout={() => navigate("/")} />
+        <TopBar userRole="Fabricant" onLogout={() => navigate("/")} />
         
         <main className="flex-1 overflow-y-auto p-6">
           <div className="mb-6">
-            <h1 className="text-3xl font-bold text-foreground">Dashboard Overview</h1>
-            <p className="text-muted-foreground">Welcome back! Here's what's happening today.</p>
+            <h1 className="text-3xl font-bold text-foreground">Aperçu du tableau de bord</h1>
+            <p className="text-muted-foreground">Bienvenue ! Voici ce qui se passe aujourd'hui.</p>
           </div>
 
           {/* Stats Grid */}
           <div className="mb-6 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
             <StatsCard
-              title="Total Lots"
-              value="1,284"
+              title="Total des lots"
+              value="1 284"
               icon={Package}
-              trend={{ value: "12% from last month", positive: true }}
+              trend={{ value: "12% depuis le mois dernier", positive: true }}
               variant="default"
             />
             <StatsCard
-              title="Active Shipments"
+              title="Expéditions actives"
               value="342"
               icon={TrendingUp}
-              trend={{ value: "8% from last week", positive: true }}
+              trend={{ value: "8% depuis la semaine dernière", positive: true }}
               variant="success"
             />
             <StatsCard
-              title="AI Alerts"
+              title="Alertes IA"
               value="23"
               icon={AlertTriangle}
-              trend={{ value: "3% from yesterday", positive: false }}
+              trend={{ value: "3% depuis hier", positive: false }}
               variant="warning"
             />
             <StatsCard
-              title="Verified Deliveries"
+              title="Livraisons vérifiées"
               value="892"
               icon={CheckCircle}
-              trend={{ value: "15% from last month", positive: true }}
+              trend={{ value: "15% depuis le mois dernier", positive: true }}
               variant="success"
             />
           </div>
@@ -61,8 +61,8 @@ export default function Dashboard() {
           {/* Recent Activity */}
           <Card>
             <CardHeader>
-              <CardTitle>Recent Activity</CardTitle>
-              <CardDescription>Latest updates from your supply chain</CardDescription>
+              <CardTitle>Activité récente</CardTitle>
+              <CardDescription>Dernières mises à jour de votre chaîne d'approvisionnement</CardDescription>
             </CardHeader>
             <CardContent>
               <div className="space-y-4">

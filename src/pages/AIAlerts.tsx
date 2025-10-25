@@ -8,30 +8,30 @@ import { useNavigate } from "react-router-dom";
 const alerts = [
   {
     id: 1,
-    type: "Suspicious Break",
+    type: "Rupture suspecte",
     severity: "high",
     lot: "LOT-2024-001",
-    description: "Unexpected delay detected in shipment timeline",
-    location: "Distribution Center A",
-    time: "2 hours ago",
+    description: "Retard inattendu détecté dans le calendrier d'expédition",
+    location: "Centre de distribution A",
+    time: "il y a 2 heures",
   },
   {
     id: 2,
-    type: "Overstock Alert",
+    type: "Alerte de surstock",
     severity: "medium",
     lot: "LOT-2024-003",
-    description: "Inventory levels exceed normal range by 45%",
-    location: "Pharmacy B",
-    time: "5 hours ago",
+    description: "Les niveaux de stock dépassent la plage normale de 45%",
+    location: "Pharmacie B",
+    time: "il y a 5 heures",
   },
   {
     id: 3,
-    type: "Location Inconsistency",
+    type: "Incohérence de localisation",
     severity: "high",
     lot: "LOT-2024-002",
-    description: "GPS coordinates don't match expected route",
-    location: "Unknown",
-    time: "1 day ago",
+    description: "Les coordonnées GPS ne correspondent pas à l'itinéraire prévu",
+    location: "Inconnue",
+    time: "il y a 1 jour",
   },
 ];
 
@@ -48,12 +48,12 @@ export default function AIAlerts() {
     <div className="flex h-screen bg-background">
       <Sidebar />
       <div className="flex flex-1 flex-col overflow-hidden">
-        <TopBar userRole="Manufacturer" onLogout={() => navigate("/")} />
+        <TopBar userRole="Fabricant" onLogout={() => navigate("/")} />
         
         <main className="flex-1 overflow-y-auto p-6">
           <div className="mb-6">
-            <h1 className="text-3xl font-bold text-foreground">AI Anomaly Alerts</h1>
-            <p className="text-muted-foreground">Real-time detection of supply chain anomalies</p>
+            <h1 className="text-3xl font-bold text-foreground">Alertes d'anomalies IA</h1>
+            <p className="text-muted-foreground">Détection en temps réel des anomalies de la chaîne d'approvisionnement</p>
           </div>
 
           <div className="space-y-4">
@@ -73,7 +73,7 @@ export default function AIAlerts() {
                           </Badge>
                         </div>
                         <CardDescription className="mt-1">
-                          Lot: <span className="font-medium">{alert.lot}</span>
+                          Lot : <span className="font-medium">{alert.lot}</span>
                         </CardDescription>
                       </div>
                     </div>
